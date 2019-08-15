@@ -1,5 +1,8 @@
 # SignUp Form
 
+A basic Sign up form which allows the users to sign up using email and also allows them to set password.
+These analytics are then synced onto the firebase authentication.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
 ## Development server
