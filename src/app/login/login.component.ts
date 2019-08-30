@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 
-import { groupBy } from 'rxjs/internal/operators/groupBy';
-import { stringify } from '@angular/compiler/src/util';
+// import { groupBy } from 'rxjs/internal/operators/groupBy';
+// import { stringify } from '@angular/compiler/src/util';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,7 @@ export class LoginComponent implements OnInit {
   message : string = "";
   userError : any;
 
-  constructor(public fb: FormBuilder, public authService: AuthService) {
+  constructor(public fb: FormBuilder, public authService: AuthService, public router: Router) {
 
     this.myForm = this.fb.group({
       email: ['', [Validators.required]],
@@ -31,6 +33,9 @@ export class LoginComponent implements OnInit {
     then((data) => {
       console.log(data);
       this.message = "you have logged in successfully."
+
+      this.router.navigate(['/myblogs'])
+
     }).catch((error) => {
       console.log(error);
       this.userError = error;
