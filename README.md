@@ -1,4 +1,5 @@
-# SignUp Form
+# Scribe Blogging
+
 
 A basic Sign up form which allows the users to sign up using email and also allows them to set password.
 These analytics are then synced onto the firebase authentication.
